@@ -1,3 +1,11 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main{
+  .image{
+    page-break-after: always;
+  }
+  .image img{
+    border: 5px solid violet;
+    border-radius: 5px;
+    margin: 30px 10px;
+    background-color: grey;
+  }
+}

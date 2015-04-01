@@ -4,4 +4,5 @@
   CDN Images
   - @images.each do |image|
     .image
+      .title #{image[:title]}
       = image_tag image[:url]
