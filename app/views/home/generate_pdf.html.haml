@@ -1,8 +1,29 @@
-.main
-  Local images
-  = image_tag 'sample.jpg'
-  CDN Images
-  - @images.each do |image|
-    .image
-      .title #{image[:title]}
-      = image_tag image[:url]
+.container-fluid
+  .row
+    .col-md-12.col-sm-12.col-xs-12
+      .logo
+        %a{href: "#"}
+  .row
+    .col-md-offset-3
+      .gradient-black-bg{style: 'width: 632px;'}
+        .row
+          #mybook
+            - @images.each_with_index do |image, indx|
+              .col-md-12.col-sm-12.col-xs-12.page{style: 'page-break-after: always;'}
+                - if image[:height] > image[:width]
+                  %div{class: "#{indx.even? ? "white-bg" : "gradient-black-bg-1"}", style: 'max-height: 366px; max-width: 100%;'}
+                    %p{class: "#{indx.odd? ? "white" : ""}"}
+                      %strong #{image[:title]}
+                      #{Date.today}
+                    .row
+                      .vertical-comments.col-md-6.col-sm-6.col-xs-12
+                      .col-md-6.col-sm-6.col-xs-12
+                        = image_tag image[:url], class: 'img-responsive center-block', style: 'max-height: 288px; width: auto;'
+                - else #if image.width > image.height
+                  %div{class: "#{indx.even? ? "white-bg" : "gradient-black-bg-1"}", style: 'max-height: 366px; max-width: 100%;'}
+                    %p{class: "#{indx.odd? ? "white" : ""}"}
+                      %strong #{image[:title]}
+                      \/ #{Date.today}
+                    = image_tag image[:url], class: 'img-responsive center-block', style: 'max-height: 242px; width: auto;'
+                    .row.horizontal-comments
+                .gap{style: 'height: 30px;'}
