@@ -17,6 +17,12 @@
                       #{Date.today}
                     .row
                       .vertical-comments.col-md-6.col-sm-6.col-xs-12
+                        - [{text: 'a sleek, intuitive, and powerful mobile first front-end framework'}, {text: 'a sleek, intuitive, and powerful mobile first front-end framework'}].each do |comment|
+                          %hr/
+                          %small.checkbox.grey-color
+                            %label
+                              %input{:type => "checkbox"}>/
+                              #{comment[:text]}
                       .col-md-6.col-sm-6.col-xs-12
                         = image_tag image[:url], class: 'img-responsive center-block', style: 'max-height: 288px; width: auto;'
                 - else #if image.width > image.height
@@ -26,4 +32,11 @@
                       \/ #{Date.today}
                     = image_tag image[:url], class: 'img-responsive center-block', style: 'max-height: 242px; width: auto;'
                     .row.horizontal-comments
+                      - [{text: 'a sleek, intuitive, and powerful mobile first front-end framework'}, {text: 'a sleek, intuitive, and powerful mobile first front-end framework'}].each do |comment|
+                        .image-comments.col-md-6.col-sm-6.col-xs-12
+                          %hr/
+                          %small.checkbox.grey-color
+                            %label
+                              %input{:type => "checkbox"}>/
+                              #{comment[:text]}
                 .gap{style: 'height: 30px;'}
