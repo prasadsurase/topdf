@@ -5,13 +5,13 @@
         %a{href: "#"}
   .row
     .col-md-offset-3
-      .gradient-black-bg{style: 'width: 632px;'}
+      .gradient-black-bg
         .row
           #mybook
             - @images.each_with_index do |image, indx|
-              .col-md-12.col-sm-12.col-xs-12.page{style: 'page-break-after: always;'}
+              .col-md-12.col-sm-12.col-xs-12.page
                 - if image[:height] > image[:width]
-                  %div{class: "#{indx.even? ? "white-bg" : "gradient-black-bg-1"}", style: 'max-height: 366px; max-width: 100%;'}
+                  %div{class: "#{indx.even? ? "white-bg" : "gradient-black-bg-1"}"}
                     %p{class: "#{indx.odd? ? "white" : ""}"}
                       %strong #{image[:title]}
                       #{Date.today}
@@ -39,4 +39,4 @@
                             %label
                               %input{:type => "checkbox"}>/
                               #{comment[:text]}
-                .gap{style: 'height: 30px;'}
+                .gap
