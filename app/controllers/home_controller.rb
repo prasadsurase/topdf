@@ -7,11 +7,14 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        html = render_to_string(layout: true , action: "generate_pdf.html.haml")
-        kit = PDFKit.new(html, page_size: 'A4', orientation: 'Landscape' )
-        kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
-        pdf = kit.to_pdf
-        send_data pdf, filename: 'booklet.pdf', type: 'application/pdf'
+        render pdf: 'booklet',
+          template: 'home/generate_pdf.html.haml',
+          layout: 'pdf.html.haml',
+          orientation: 'Landscape',
+          page_size: 'A4',
+          disposition: 'inline'
+        #pdf = render_to_string layout: 'pdf.html.haml', template: "home/generate_pdf.html.haml", encoding: "UTF-8", orientation: 'Landscape', page_size: 'A4'
+        #send_data WickedPdf.new.pdf_from_string(pdf), filename: 'booklet'
       end
     end
   end

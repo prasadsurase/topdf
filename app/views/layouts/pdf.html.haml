@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Topdf
+    = wicked_pdf_stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = wicked_pdf_javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = yield
