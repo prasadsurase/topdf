@@ -14,7 +14,7 @@
                   %div{class: "#{indx.even? ? "white-bg" : "gradient-black-bg-1"}"}
                     %p{class: "#{indx.odd? ? "white" : ""}"}
                       %strong #{image[:title]}
-                      #{Date.today}
+                      Some random title that doesnt matter / #{Date.today}
                     .row
                       .vertical-comments.col-md-6.col-sm-6.col-xs-6
                         - [{text: 'a sleek, intuitive, and powerful mobile first front-end framework'}, {text: 'a sleek, intuitive, and powerful mobile first front-end framework'}].each do |comment|
@@ -29,7 +29,7 @@
                   %div{class: "#{indx.even? ? "white-bg" : "gradient-black-bg-1"}", style: 'max-height: 366px; max-width: 100%;'}
                     %p{class: "#{indx.odd? ? "white" : ""}"}
                       %strong #{image[:title]}
-                      \/ #{Date.today}
+                      Some random title that doesnt matter / #{Date.today}
                     = image_tag image[:url], class: 'img-responsive center-block', style: 'max-height: 242px; width: auto;'
                     .row.horizontal-comments
                       - [{text: 'a sleek, intuitive, and powerful mobile first front-end framework'}, {text: 'a sleek, intuitive, and powerful mobile first front-end framework'}].each do |comment|
